@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalistic Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        
+        <div class="template-selector">
+            <h3>Select Template</h3>
+            <div class="templates">
+                <div class="template active" data-template="classic">Classic</div>
+                <div class="template" data-template="modern">Modern</div>
+                <div class="template" data-template="simple">Simple</div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="downloadBtn" class="download-btn">Download PDF</button>
+            <button id="clearBtn" class="clear-btn">Clear All</button>
+        </div>
+
+        <div class="form-container">
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                </div>
+                <div class="input-group">
+                    <label for="title">Professional Title</label>
+                    <input type="text" id="title" placeholder="Ex:-Software Developer">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your@mail.com">
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="+91 0000000000">
+                </div>
+                <div class="input-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Jharkhand, India">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Social Links</h2>
+                <div class="social-links">
+                    <div class="input-group">
+                        <label for="linkedin">LinkedIn</label>
+                        <div class="input-with-prefix">
+                            <span class="prefix">linkedin.com/in/</span>
+                            <input type="text" id="linkedin" placeholder="username">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="github">GitHub</label>
+                        <div class="input-with-prefix">
+                            <span class="prefix">github.com/</span>
+                            <input type="text" id="github" placeholder="username">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="twitter">Twitter</label>
+                        <div class="input-with-prefix">
+                            <span class="prefix">twitter.com/</span>
+                            <input type="text" id="twitter" placeholder="username">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="instagram">Instagram</label>
+                        <div class="input-with-prefix">
+                            <span class="prefix">instagram.com/</span>
+                            <input type="text" id="instagram" placeholder="username">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="website">Personal Website</label>
+                        <input type="url" id="website" placeholder="https://yourwebsite.com">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Professional Summary</h2>
+                <div class="input-group">
+                    <textarea id="summary" rows="4" placeholder="Write a brief professional summary..."></textarea>
+                    <button id="enhanceSummary" class="enhance-btn">AI Enhance</button>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Experience</h2>
+                <div id="experience-list">
+                    <div class="experience-item">
+                        <div class="input-group">
+                            <label>Company</label>
+                            <input type="text" class="company" placeholder="Company Name">
+                        </div>
+                        <div class="input-group">
+                            <label>Position</label>
+                            <input type="text" class="position" placeholder="Job Title">
+                        </div>
+                        <div class="date-range">
+                            <div class="input-group">
+                                <label>Start Date</label>
+                                <input type="month" class="start-date">
+                            </div>
+                            <div class="input-group">
+                                <label>End Date</label>
+                                <input type="month" class="end-date">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" class="current-job" id="current-job-1">
+                                    <label for="current-job-1">Current Job</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Description</label>
+                            <textarea class="description" rows="3" placeholder="Describe your responsibilities and achievements..."></textarea>
+                            <button class="enhance-btn enhance-description">AI Enhance</button>
+                        </div>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+                <button id="add-experience" class="add-btn">Add Experience</button>
+            </div>
+
+            <div class="form-section">
+                <h2>Projects</h2>
+                <div id="projects-list">
+                    <div class="project-item">
+                        <div class="input-group">
+                            <label>Project Name</label>
+                            <input type="text" class="project-name" placeholder="Project Name">
+                        </div>
+                        <div class="input-group">
+                            <label>Project Link</label>
+                            <input type="url" class="project-link" placeholder="https://project-url.com">
+                        </div>
+                        <div class="input-group">
+                            <label>Description</label>
+                            <textarea class="project-description" rows="3" placeholder="Describe your project..."></textarea>
+                            <button class="enhance-btn enhance-project">AI Enhance</button>
+                        </div>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+                <button id="add-project" class="add-btn">Add Project</button>
+            </div>
+
+            <div class="form-section">
+                <h2>Education</h2>
+                <div id="education-list">
+                    <div class="education-item">
+                        <div class="input-group">
+                            <label>Institution</label>
+                            <input type="text" class="institution" placeholder="University Name">
+                        </div>
+                        <div class="input-group">
+                            <label>Degree</label>
+                            <input type="text" class="degree" placeholder="Bachelor of Science in Computer Science">
+                        </div>
+                        <div class="date-range">
+                            <div class="input-group">
+                                <label>Start Date</label>
+                                <input type="month" class="edu-start-date">
+                            </div>
+                            <div class="input-group">
+                                <label>End Date</label>
+                                <input type="month" class="edu-end-date">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" class="current-edu" id="current-edu-1">
+                                    <label for="current-edu-1">Currently Studying</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+                <button id="add-education" class="add-btn">Add Education</button>
+            </div>
+
+            <div class="form-section">
+                <h2>Skills</h2>
+                <div class="input-group">
+                    <input type="text" id="skill-input" placeholder="Add a skill and press Enter">
+                </div>
+                <div id="skills-list" class="skills-list"></div>
+            </div>
+        </div>
+
+        <div class="resume-preview">
+            <h2>Preview</h2>
+            <div id="resume-preview-container" class="preview-container classic-template">
+                <!-- Preview will be generated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
